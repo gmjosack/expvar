@@ -3,11 +3,11 @@
 import setuptools
 from distutils.core import setup
 
-execfile('expvar/version.py')
+expvar = __import__('expvar')
 
 kwargs = {
     "name": "expvar",
-    "version": str(__version__),
+    "version": str(expvar.__version__),
     "packages": ["expvar"],
     "description": "Store and retrieve TOTP secrets/tokens.",
     # PyPi, despite not parsing markdown, will prefer the README.md to the
