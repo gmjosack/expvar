@@ -12,8 +12,8 @@ class Stats(object):
         self._labels = {}
 
     def incr(self, key, count=1):
-        if not isinstance(count, int):
-            raise TypeError("count must be integer.")
+        if not isinstance(count, Real):
+            raise TypeError("count must be numeric type.")
         with self._lock:
             curr_count = self._counters.get(key, 0)
             self._counters[key] = curr_count + count
